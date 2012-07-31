@@ -31,18 +31,14 @@ While 1
 			EndIf
 			Sleep(500)
 			ContinueLoop
-		Case $msg = $TrayStartStop
-			If TrayItemGetState($TrayStartStop) = 65 Then
-;~ 				TrayItemSetText($TrayStartStop, "Start asking")
-;~ 				TrayItemSetState($TrayStartStop, 68)
-				$gCheckOn = False
-			ElseIf TrayItemGetState($TrayStartStop) = 68 Then
-;~ 				TrayItemSetText($TrayStartStop, "Stop asking")
-;~ 				TrayItemSetState($TrayStartStop, 65)
-				$gCheckOn = True
-			Else
-				ContinueLoop
-			EndIf
+;~ 		Case $msg = $TrayStartStop
+;~ 			If TrayItemGetState($TrayStartStop) = 65 Then
+;~ 				$gCheckOn = False
+;~ 			ElseIf TrayItemGetState($TrayStartStop) = 68 Then
+;~ 				$gCheckOn = True
+;~ 			Else
+;~ 				ContinueLoop
+;~ 			EndIf
 		Case $msg = $TrayAbout
 			Msgbox(64, "About:", "This is a little tool to close the Avira Update message after it asks for a reboot.")
 		Case $msg = $TrayExit
@@ -53,15 +49,3 @@ While 1
 WEnd
 
 Exit
-
-#cs
-While 1
-
-	If WinExists("Systemneustart", "Das durchgeführte Update erfordert einen Systemneustart. Soll der Systemneustart jetzt ausgeführt werden?") Then
-		WinKill("Systemneustart", "Das durchgeführte Update erfordert einen Systemneustart. Soll der Systemneustart jetzt ausgeführt werden?")
-	EndIf
-
-	Sleep(1000)
-
-WEnd
-#ce
