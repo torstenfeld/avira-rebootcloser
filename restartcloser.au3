@@ -1,9 +1,10 @@
 #NoTrayIcon
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_icon=icon.ico
+#AutoIt3Wrapper_UseX64=n
 #AutoIt3Wrapper_Res_Comment=This tool waits for the reboot windows to appear and closes it automatically
 #AutoIt3Wrapper_Res_Description=Avira reboot question window closer
-#AutoIt3Wrapper_Res_Fileversion=1.0.0.1
+#AutoIt3Wrapper_Res_Fileversion=1.0.0.2
 #AutoIt3Wrapper_Res_LegalCopyright=Torsten Feld - 2011
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
@@ -29,7 +30,7 @@ While 1
 					WinKill("Systemneustart", "Das durchgeführte Update erfordert einen Systemneustart. Soll der Systemneustart jetzt ausgeführt werden?")
 				EndIf
 			EndIf
-			Sleep(500)
+			Sleep(300)
 			ContinueLoop
 ;~ 		Case $msg = $TrayStartStop
 ;~ 			If TrayItemGetState($TrayStartStop) = 65 Then
